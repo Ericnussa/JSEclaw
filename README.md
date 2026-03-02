@@ -1,5 +1,7 @@
 # 🦞 JSEclaw (fork of OpenClaw) — Personal AI Assistant
 
+> Fork note: this repo adds `jseclaw` branding/CLI alias while remaining compatible with `openclaw` commands during migration.
+
 <p align="center">
     <picture>
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.png">
