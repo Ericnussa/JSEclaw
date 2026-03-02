@@ -1,4 +1,4 @@
-# 🦞 OpenClaw — Personal AI Assistant
+# 🦞 JSEclaw (fork of OpenClaw) — Personal AI Assistant
 
 <p align="center">
     <picture>
