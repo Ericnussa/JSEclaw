@@ -7,11 +7,13 @@ This repository is the initial fork of `openclaw/openclaw` for Eric's custom dis
 - Local clone initialized with upstream remote
 - Initial branding marker added in README title
 
-## Phase 2 (next)
-- Rename CLI/package surfaces from `openclaw` to `jseclaw` (careful migration)
-- Add `JSECLAW_BRAND.md` with voice/default UX changes
-- Add VPS-first install and deploy docs
-- Set up release channel/tags for JSEclaw
+## Phase 2 (in progress)
+- ✅ Added `jseclaw` npm package name + metadata pointing to `Ericnussa/JSEclaw`
+- ✅ Added `jseclaw` CLI binary (compatibility wrapper), while keeping `openclaw` binary intact
+- ✅ Added `npm run jseclaw` and `npm run jseclaw:rpc` aliases
+- ⏳ Add `JSECLAW_BRAND.md` with voice/default UX changes
+- ⏳ Add VPS-first install and deploy docs
+- ⏳ Set up release channel/tags for JSEclaw
 
 ## Upstream Sync Strategy
 - Keep `upstream` remote pointing to `openclaw/openclaw`

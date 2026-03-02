@@ -1,20 +1,21 @@
 {
-  "name": "openclaw",
+  "name": "jseclaw",
   "version": "2026.3.2",
-  "description": "Multi-channel AI gateway with extensible messaging integrations",
+  "description": "JSEclaw: personal AI assistant (OpenClaw fork)",
   "keywords": [],
-  "homepage": "https://github.com/openclaw/openclaw#readme",
+  "homepage": "https://github.com/Ericnussa/JSEclaw#readme",
   "bugs": {
-    "url": "https://github.com/openclaw/openclaw/issues"
+    "url": "https://github.com/Ericnussa/JSEclaw/issues"
   },
   "license": "MIT",
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openclaw/openclaw.git"
+    "url": "git+https://github.com/Ericnussa/JSEclaw.git"
   },
   "bin": {
-    "openclaw": "openclaw.mjs"
+    "openclaw": "openclaw.mjs",
+    "jseclaw": "jseclaw.mjs"
   },
   "directories": {
     "doc": "docs",
@@ -24,6 +25,7 @@
     "CHANGELOG.md",
     "LICENSE",
     "openclaw.mjs",
+    "jseclaw.mjs",
     "README-header.png",
     "README.md",
     "assets/",
@@ -159,7 +161,9 @@
     "tui:dev": "OPENCLAW_PROFILE=dev CLAWDBOT_PROFILE=dev node scripts/run-node.mjs --dev tui",
     "ui:build": "node scripts/ui.js build",
     "ui:dev": "node scripts/ui.js dev",
-    "ui:install": "node scripts/ui.js install"
+    "ui:install": "node scripts/ui.js install",
+    "jseclaw": "node scripts/run-node.mjs",
+    "jseclaw:rpc": "node scripts/run-node.mjs agent --mode rpc --json"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "0.14.1",
