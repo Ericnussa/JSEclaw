@@ -2,6 +2,20 @@
 
 > Fork note: this repo adds `jseclaw` branding/CLI alias while remaining compatible with `openclaw` commands during migration.
 
+
+## JSEclaw CLI (migration-safe)
+
+This fork supports both commands:
+
+```bash
+jseclaw ...
+# and (legacy-compatible)
+openclaw ...
+```
+
+During migration, both will remain available.
+
+
 <p align="center">
     <picture>
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.png">
