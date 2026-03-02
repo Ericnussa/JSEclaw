@@ -67,7 +67,7 @@ These are different gates:
 Quick checks:
 
 ```bash
-openclaw devices list
+jsebot devices list
 openclaw nodes status
 openclaw approvals get --node <idOrNameOrIp>
 openclaw approvals allowlist add --node <idOrNameOrIp> "/usr/bin/uname"

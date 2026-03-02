@@ -96,8 +96,8 @@ The first connection creates a pending device pairing request (`role: node`) on 
 Approve it via:
 
 ```bash
-openclaw devices list
-openclaw devices approve <requestId>
+jsebot devices list
+jsebot devices approve <requestId>
 ```
 
 The node host stores its node id, token, display name, and gateway connection info in

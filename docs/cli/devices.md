@@ -12,13 +12,13 @@ Manage device pairing requests and device-scoped tokens.
 
 ## Commands
 
-### `openclaw devices list`
+### `jsebot devices list`
 
 List pending pairing requests and paired devices.
 
 ```
-openclaw devices list
-openclaw devices list --json
+jsebot devices list
+jsebot devices list --json
 ```
 
 ### `openclaw devices remove <deviceId>`
@@ -42,12 +42,12 @@ openclaw devices clear --yes --pending --json
 
 ### `openclaw devices approve [requestId] [--latest]`
 
-Approve a pending device pairing request. If `requestId` is omitted, OpenClaw
+Approve a pending device pairing request. If `requestId` is omitted, JSEBot
 automatically approves the most recent pending request.
 
 ```
 openclaw devices approve
-openclaw devices approve <requestId>
+jsebot devices approve <requestId>
 openclaw devices approve --latest
 ```
 

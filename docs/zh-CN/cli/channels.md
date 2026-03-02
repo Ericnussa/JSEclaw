@@ -45,7 +45,7 @@ openclaw channels remove --channel telegram --delete
 ## 登录/登出（交互式）
 
 ```bash
-openclaw channels login --channel whatsapp
+jsebot channels login --channel whatsapp
 openclaw channels logout --channel whatsapp
 ```
 

@@ -1,6 +1,6 @@
 ---
 read_when:
-  - 为 OpenClaw 设置 Zalo Personal
+  - 为 JSEBot 设置 Zalo Personal
   - 调试 Zalo Personal 登录或消息流程
 summary: 通过 zca-cli（QR 登录）支持 Zalo 个人账户、功能和配置
 title: Zalo Personal
@@ -38,7 +38,7 @@ Gateway 网关机器必须在 `PATH` 中有可用的 `zca` 二进制文件。
 
 1. 安装插件（见上文）。
 2. 登录（QR，在 Gateway 网关机器上）：
-   - `openclaw channels login --channel zalouser`
+   - `jsebot channels login --channel zalouser`
    - 用 Zalo 手机应用扫描终端中的二维码。
 3. 启用渠道：
 
@@ -99,7 +99,7 @@ openclaw directory groups list --channel zalouser --query "work"
   - `channels.zalouser.groups`（键为群组 ID 或名称）
 - 阻止所有群组：`channels.zalouser.groupPolicy = "disabled"`。
 - 配置向导可以提示输入群组允许列表。
-- 启动时，OpenClaw 将允许列表中的群组/用户名称解析为 ID 并记录映射；未解析的条目保持原样。
+- 启动时，JSEBot 将允许列表中的群组/用户名称解析为 ID 并记录映射；未解析的条目保持原样。
 
 示例：
 
@@ -144,4 +144,4 @@ openclaw directory groups list --channel zalouser --query "work"
 **登录不保持：**
 
 - `openclaw channels status --probe`
-- 重新登录：`openclaw channels logout --channel zalouser && openclaw channels login --channel zalouser`
+- 重新登录：`openclaw channels logout --channel zalouser && jsebot channels login --channel zalouser`

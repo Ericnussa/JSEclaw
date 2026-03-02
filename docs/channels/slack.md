@@ -34,7 +34,7 @@ Status: production-ready for DMs + channels via Slack app integrations. Default 
         - install app and copy **Bot Token** (`xoxb-...`)
       </Step>
 
-      <Step title="Configure OpenClaw">
+      <Step title="Configure JSEBot">
 
 ```json5
 {
@@ -92,7 +92,7 @@ openclaw gateway
 
       </Step>
 
-      <Step title="Configure OpenClaw HTTP mode">
+      <Step title="Configure JSEBot HTTP mode">
 
 ```json5
 {
@@ -309,7 +309,7 @@ Available action groups in current Slack tooling:
 
 ## Ack reactions
 
-`ackReaction` sends an acknowledgement emoji while OpenClaw is processing an inbound message.
+`ackReaction` sends an acknowledgement emoji while JSEBot is processing an inbound message.
 
 Resolution order:
 
@@ -331,12 +331,12 @@ Notes:
 ```json
 {
   "display_information": {
-    "name": "OpenClaw",
-    "description": "Slack connector for OpenClaw"
+    "name": "JSEBot",
+    "description": "Slack connector for JSEBot"
   },
   "features": {
     "bot_user": {
-      "display_name": "OpenClaw",
+      "display_name": "JSEBot",
       "always_online": false
     },
     "app_home": {
@@ -346,7 +346,7 @@ Notes:
     "slash_commands": [
       {
         "command": "/openclaw",
-        "description": "Send a message to OpenClaw",
+        "description": "Send a message to JSEBot",
         "should_escape": false
       }
     ]
@@ -477,7 +477,7 @@ openclaw pairing list slack
 
 ## Text streaming
 
-OpenClaw supports Slack native text streaming via the Agents and AI Apps API.
+JSEBot supports Slack native text streaming via the Agents and AI Apps API.
 
 `channels.slack.streaming` controls live preview behavior:
 
@@ -514,7 +514,7 @@ Legacy keys:
 - Later text chunks append to the same stream (`chat.appendStream`).
 - End of reply finalizes stream (`chat.stopStream`).
 - Media and non-text payloads fall back to normal delivery.
-- If streaming fails mid-reply, OpenClaw falls back to normal delivery for remaining payloads.
+- If streaming fails mid-reply, JSEBot falls back to normal delivery for remaining payloads.
 
 ## Configuration reference pointers
 

@@ -10,7 +10,7 @@ title: "Web Tools"
 
 # Web tools
 
-OpenClaw ships two lightweight web tools:
+JSEBot ships two lightweight web tools:
 
 - `web_search` — Search the web via Brave Search API (default), Perplexity Sonar, or Gemini with Google Search grounding.
 - `web_fetch` — HTTP fetch + readable extraction (HTML → markdown/text).
@@ -41,7 +41,7 @@ See [Brave Search setup](/brave-search) and [Perplexity Sonar](/perplexity) for 
 
 ### Auto-detection
 
-If no `provider` is explicitly set, OpenClaw auto-detects which provider to use based on available API keys, checking in this order:
+If no `provider` is explicitly set, JSEBot auto-detects which provider to use based on available API keys, checking in this order:
 
 1. **Brave** — `BRAVE_API_KEY` env var or `search.apiKey` config
 2. **Gemini** — `GEMINI_API_KEY` env var or `search.gemini.apiKey` config
@@ -97,7 +97,7 @@ current limits and pricing.
 ### Where to set the key (recommended)
 
 **Recommended:** run `openclaw configure --section web`. It stores the key in
-`~/.openclaw/openclaw.json` under `tools.web.search.apiKey`.
+`~/.jsebot/jsebot.json` under `tools.web.search.apiKey`.
 
 **Environment alternative:** set `BRAVE_API_KEY` in the Gateway process
 environment. For a gateway install, put it in `~/.openclaw/.env` (or your
@@ -141,7 +141,7 @@ crypto/prepaid).
 **Environment alternative:** set `OPENROUTER_API_KEY` or `PERPLEXITY_API_KEY` in the Gateway
 environment. For a gateway install, put it in `~/.openclaw/.env`.
 
-If no base URL is set, OpenClaw chooses a default based on the API key source:
+If no base URL is set, JSEBot chooses a default based on the API key source:
 
 - `PERPLEXITY_API_KEY` or `pplx-...` → `https://api.perplexity.ai`
 - `OPENROUTER_API_KEY` or `sk-or-...` → `https://openrouter.ai/api/v1`

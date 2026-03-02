@@ -29,8 +29,8 @@ creates a device pairing request for `role: node`. Approve via the devices CLI (
 Quick CLI:
 
 ```bash
-openclaw devices list
-openclaw devices approve <requestId>
+jsebot devices list
+jsebot devices approve <requestId>
 openclaw devices reject <requestId>
 openclaw nodes status
 openclaw nodes describe --node <idOrNameOrIp>
@@ -81,7 +81,7 @@ openclaw node run --host 127.0.0.1 --port 18790 --display-name "Build Node"
 
 Notes:
 
-- The token is `gateway.auth.token` from the gateway config (`~/.openclaw/openclaw.json` on the gateway host).
+- The token is `gateway.auth.token` from the gateway config (`~/.jsebot/jsebot.json` on the gateway host).
 - `openclaw node run` reads `OPENCLAW_GATEWAY_TOKEN` for auth.
 
 ### Start a node host (service)
@@ -96,8 +96,8 @@ openclaw node restart
 On the gateway host:
 
 ```bash
-openclaw devices list
-openclaw devices approve <requestId>
+jsebot devices list
+jsebot devices approve <requestId>
 openclaw nodes status
 ```
 
@@ -253,7 +253,7 @@ Android nodes can expose `sms.send` when the user grants **SMS** permission and 
 Low-level invoke:
 
 ```bash
-openclaw nodes invoke --node <idOrNameOrIp> --command sms.send --params '{"to":"+15555550123","message":"Hello from OpenClaw"}'
+openclaw nodes invoke --node <idOrNameOrIp> --command sms.send --params '{"to":"+15555550123","message":"Hello from JSEBot"}'
 ```
 
 Notes:
@@ -346,7 +346,7 @@ Nodes may include a `permissions` map in `node.list` / `node.describe`, keyed by
 
 ## Headless node host (cross-platform)
 
-OpenClaw can run a **headless node host** (no UI) that connects to the Gateway
+JSEBot can run a **headless node host** (no UI) that connects to the Gateway
 WebSocket and exposes `system.run` / `system.which`. This is useful on Linux/Windows
 or for running a minimal node alongside a server.
 

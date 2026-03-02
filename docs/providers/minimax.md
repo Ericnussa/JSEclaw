@@ -1,7 +1,7 @@
 ---
-summary: "Use MiniMax M2.1 in OpenClaw"
+summary: "Use MiniMax M2.1 in JSEBot"
 read_when:
-  - You want MiniMax models in OpenClaw
+  - You want MiniMax models in JSEBot
   - You need MiniMax setup guidance
 title: "MiniMax"
 ---

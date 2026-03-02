@@ -128,7 +128,7 @@ Dashboard（local loopback）：`http://127.0.0.1:18789/`
 ```bash
 openclaw status
 openclaw health
-openclaw security audit --deep
+jsebot security audit --deep
 ```
 
 ## 4) 配对 + 连接你的第一个聊天界面
@@ -136,7 +136,7 @@ openclaw security audit --deep
 ### WhatsApp（QR 登录）
 
 ```bash
-openclaw channels login
+jsebot channels login
 ```
 
 通过 WhatsApp → 设置 → 链接设备扫描。
@@ -166,7 +166,7 @@ openclaw pairing approve whatsapp <code>
 
 ## 从源代码（开发）
 
-如果你正在开发 OpenClaw 本身，从源代码运行：
+如果你正在开发 JSEBot 本身，从源代码运行：
 
 ```bash
 git clone https://github.com/openclaw/openclaw.git
@@ -190,7 +190,7 @@ node openclaw.mjs gateway --port 18789 --verbose
 在新终端中，发送测试消息：
 
 ```bash
-openclaw message send --target +15555550123 --message "Hello from OpenClaw"
+openclaw message send --target +15555550123 --message "Hello from JSEBot"
 ```
 
 如果 `openclaw health` 显示"未配置认证"，回到向导设置 OAuth/密钥认证——没有它智能体将无法响应。

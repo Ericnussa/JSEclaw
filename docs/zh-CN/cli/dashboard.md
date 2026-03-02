@@ -19,5 +19,5 @@ x-i18n:
 
 ```bash
 openclaw dashboard
-openclaw dashboard --no-open
+jsebot dashboard --no-open
 ```

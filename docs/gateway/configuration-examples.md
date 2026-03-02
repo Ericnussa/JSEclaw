@@ -1,9 +1,9 @@
 ---
-summary: "Schema-accurate configuration examples for common OpenClaw setups"
+summary: "Schema-accurate configuration examples for common JSEBot setups"
 read_when:
-  - Learning how to configure OpenClaw
+  - Learning how to configure JSEBot
   - Looking for configuration examples
-  - Setting up OpenClaw for the first time
+  - Setting up JSEBot for the first time
 title: "Configuration Examples"
 ---
 
@@ -22,7 +22,7 @@ Examples below are aligned with the current config schema. For the exhaustive re
 }
 ```
 
-Save to `~/.openclaw/openclaw.json` and you can DM the bot from that number.
+Save to `~/.jsebot/jsebot.json` and you can DM the bot from that number.
 
 ### Recommended starter
 

@@ -25,7 +25,7 @@ x-i18n:
 
 ```bash
 openclaw security audit
-openclaw security audit --deep
+jsebot security audit --deep
 openclaw security audit --fix
 ```
 

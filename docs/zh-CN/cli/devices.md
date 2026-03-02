@@ -19,21 +19,21 @@ x-i18n:
 
 ## 命令
 
-### `openclaw devices list`
+### `jsebot devices list`
 
 列出待处理的配对请求和已配对的设备。
 
 ```
-openclaw devices list
-openclaw devices list --json
+jsebot devices list
+jsebot devices list --json
 ```
 
-### `openclaw devices approve <requestId>`
+### `jsebot devices approve <requestId>`
 
 批准待处理的设备配对请求。
 
 ```
-openclaw devices approve <requestId>
+jsebot devices approve <requestId>
 ```
 
 ### `openclaw devices reject <requestId>`
