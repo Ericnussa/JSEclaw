@@ -1,7 +1,7 @@
 {
-  "name": "jseclaw",
+  "name": "jsebot",
   "version": "2026.3.2",
-  "description": "JSEclaw: personal AI assistant (OpenClaw fork)",
+  "description": "JSEBot: personal AI assistant (OpenClaw fork)",
   "keywords": [],
   "homepage": "https://github.com/Ericnussa/JSEclaw#readme",
   "bugs": {
@@ -15,7 +15,8 @@
   },
   "bin": {
     "openclaw": "openclaw.mjs",
-    "jseclaw": "jseclaw.mjs"
+    "jseclaw": "jseclaw.mjs",
+    "jsebot": "jsebot.mjs"
   },
   "directories": {
     "doc": "docs",
@@ -32,7 +33,9 @@
     "dist/",
     "docs/",
     "extensions/",
-    "skills/"
+    "skills/",
+    "jsebot.mjs",
+    "assets/branding/"
   ],
   "type": "module",
   "main": "dist/index.js",
@@ -163,7 +166,9 @@
     "ui:dev": "node scripts/ui.js dev",
     "ui:install": "node scripts/ui.js install",
     "jseclaw": "node scripts/run-node.mjs",
-    "jseclaw:rpc": "node scripts/run-node.mjs agent --mode rpc --json"
+    "jseclaw:rpc": "node scripts/run-node.mjs agent --mode rpc --json",
+    "jsebot": "node scripts/run-node.mjs",
+    "jsebot:rpc": "node scripts/run-node.mjs agent --mode rpc --json"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "0.14.1",

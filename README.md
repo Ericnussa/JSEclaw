@@ -1,14 +1,17 @@
-# 🦞 JSEclaw (fork of OpenClaw) — Personal AI Assistant
+# 🤖 JSEBot (fork of OpenClaw) — Personal AI Assistant
 
-> Fork note: this repo adds `jseclaw` branding/CLI alias while remaining compatible with `openclaw` commands during migration.
+> Fork note: this repo adds `jsebot`/`jseclaw` branding aliases while remaining compatible with `openclaw` commands during migration.
+
+<p align="center"><img src="assets/branding/jsebot-icon.svg" alt="JSEBot icon" width="120"></p>
 
 
-## JSEclaw CLI (migration-safe)
+## JSEBot CLI (migration-safe)
 
 This fork supports both commands:
 
 ```bash
-jseclaw ...
+jsebot ...
+# also
 # and (legacy-compatible)
 openclaw ...
 ```
