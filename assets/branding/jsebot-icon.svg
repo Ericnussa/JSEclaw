@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="JSEBot robot icon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect x="44" y="56" width="168" height="140" rx="26" fill="url(#g)" stroke="#0f172a" stroke-width="8"/>
+  <rect x="78" y="26" width="100" height="36" rx="14" fill="#bae6fd" stroke="#0f172a" stroke-width="8"/>
+  <circle cx="100" cy="122" r="16" fill="#0f172a"/>
+  <circle cx="156" cy="122" r="16" fill="#0f172a"/>
+  <rect x="96" y="158" width="64" height="12" rx="6" fill="#0f172a"/>
+  <rect x="26" y="98" width="20" height="52" rx="10" fill="#7dd3fc" stroke="#0f172a" stroke-width="8"/>
+  <rect x="210" y="98" width="20" height="52" rx="10" fill="#7dd3fc" stroke="#0f172a" stroke-width="8"/>
+  <circle cx="128" cy="26" r="10" fill="#0f172a"/>
+  <rect x="124" y="6" width="8" height="20" rx="4" fill="#0f172a"/>
+</svg>

@@ -1,16 +1,16 @@
-# JSEclaw Brand & Product Defaults
+# JSEBot Brand & Product Defaults
 
-JSEclaw is Eric's forked distribution of OpenClaw.
+JSEBot is Eric's forked distribution of OpenClaw.
 
 ## Brand Positioning
-- Product name: **JSEclaw**
+- Product name: **JSEBot**
 - Upstream base: `openclaw/openclaw`
 - Distribution model: upstream-compatible fork with opinionated defaults
 
 ## Compatibility Strategy
 - Keep `openclaw` command working during migration
-- Introduce and promote `jseclaw` command as preferred CLI
-- Avoid hard-breaking command/config changes until a major JSEclaw release
+- Introduce and promote `jsebot` command as preferred CLI
+- Avoid hard-breaking command/config changes until a major JSEBot release
 
 ## Default Deployment Direction
 - VPS-first deployment path
@@ -20,4 +20,4 @@ JSEclaw is Eric's forked distribution of OpenClaw.
 ## Release Plan
 - Tag line: `v0.1.0-jse` for first branded release
 - Keep periodic upstream sync merges
-- Maintain `CHANGELOG.md` entries for JSEclaw-specific deltas
+- Maintain `CHANGELOG.md` entries for JSEBot-specific deltas
