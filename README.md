@@ -1,21 +1,29 @@
-# 🤖 JSEBot (fork of JSEBot) — Personal AI Assistant
+# 🤖 JSEBot — Personal AI Assistant
 
-> Fork note: this repo adds `jsebot`/`jseclaw` branding aliases while remaining compatible with `openclaw` commands during migration.
+> **JSEBot v0.1.1** is now live on npm! `npm install -g jsebot`
+>
+> This is Eric's custom distribution of OpenClaw, with branding, security hardening, and focused agent workflows.
 
 <p align="center"><img src="assets/branding/jsebot-icon.svg" alt="JSEBot icon" width="120"></p>
 
-## JSEBot CLI (migration-safe)
+## Getting Started
 
-This fork supports both commands:
+### Install JSEBot
 
 ```bash
-jsebot ...
-# also
-# and (legacy-compatible)
-openclaw ...
+npm install -g jsebot
+jsebot onboard
 ```
 
-During migration, both will remain available.
+### Quick Commands
+
+```bash
+jsebot ...        # JSEBot CLI (primary)
+jseclaw ...       # JSEclaw alias
+openclaw ...      # OpenClaw compatible
+```
+
+All three commands are fully functional and interchangeable during migration.
 
 <p align="center">
     <picture>
@@ -29,23 +37,41 @@ During migration, both will remain available.
 </p>
 
 <p align="center">
-  <a href="https://github.com/openclaw/openclaw/actions/workflows/ci.yml?branch=main"><img src="https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://github.com/openclaw/openclaw/releases"><img src="https://img.shields.io/github/v/release/openclaw/openclaw?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
-  <a href="https://discord.gg/clawd"><img src="https://img.shields.io/discord/1456350064065904867?label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge" alt="Discord"></a>
+  <a href="https://www.npmjs.com/package/jsebot"><img src="https://img.shields.io/npm/v/jsebot.svg?style=for-the-badge" alt="npm version"></a>
+  <a href="https://github.com/Ericnussa/JSEclaw/actions/workflows/ci.yml?branch=main"><img src="https://img.shields.io/github/actions/workflow/status/Ericnussa/JSEclaw/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
+  <a href="https://github.com/Ericnussa/JSEclaw/releases"><img src="https://img.shields.io/github/v/release/Ericnussa/JSEclaw?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
 </p>
 
-**JSEBot** is a _personal AI assistant_ you run on your own devices.
+**JSEBot** is a _personal AI assistant_ you run on your own devices. It's built on [OpenClaw](https://github.com/openclaw/openclaw) with custom branding, security hardening, and integrated agent workflows tailored for power users.
 It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo, Zalo Personal, WebChat). It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
 
 If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
 
 [Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openclaw/openclaw) · [Getting Started](https://docs.openclaw.ai/start/getting-started) · [Updating](https://docs.openclaw.ai/install/updating) · [Showcase](https://docs.openclaw.ai/start/showcase) · [FAQ](https://docs.openclaw.ai/help/faq) · [Wizard](https://docs.openclaw.ai/start/wizard) · [Nix](https://github.com/openclaw/nix-openclaw) · [Docker](https://docs.openclaw.ai/install/docker) · [Discord](https://discord.gg/clawd)
 
-Preferred setup: run the onboarding wizard (`openclaw onboard`) in your terminal.
-The wizard guides you step by step through setting up the gateway, workspace, channels, and skills. The CLI wizard is the recommended path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**.
-Works with npm, pnpm, or bun.
-New install? Start here: [Getting started](https://docs.openclaw.ai/start/getting-started)
+## About JSEBot
+
+**JSEBot** is a custom distribution of OpenClaw maintained by Eric. It includes:
+
+- ✅ Branded CLI (`jsebot`, `jseclaw` commands)
+- ✅ Security hardening (audit gates, dependency pinning)
+- ✅ Trusted npm publishing (automatic CI/CD)
+- ✅ Full backward compatibility with OpenClaw
+
+All OpenClaw features, channels, and skills work out of the box.
+
+## Setup & Getting Started
+
+Preferred setup: run the onboarding wizard:
+
+```bash
+jsebot onboard
+```
+
+The wizard guides you step by step through setting up the gateway, workspace, channels, and skills. Works on **macOS, Linux, and Windows (via WSL2)**.
+
+For full documentation, see [OpenClaw Docs](https://docs.openclaw.ai/start/getting-started).
 
 ## Sponsors
 
