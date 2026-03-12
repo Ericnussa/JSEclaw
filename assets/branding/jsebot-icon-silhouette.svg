@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="JSEBot robot icon (silhouette)">
+  <!-- Silhouette variant for menu bar and monochrome uses -->
+  <!-- Fill: solid black (#000000) -->
+  <!-- For menu bar: scale to 16x16 and use white stroke on dark background -->
+  
+  <!-- Body -->
+  <rect x="44" y="56" width="168" height="140" rx="26" fill="#000000"/>
+  
+  <!-- Head -->
+  <rect x="78" y="26" width="100" height="36" rx="14" fill="#000000"/>
+  
+  <!-- Left Eye -->
+  <circle cx="100" cy="122" r="16" fill="#ffffff"/>
+  
+  <!-- Right Eye -->
+  <circle cx="156" cy="122" r="16" fill="#ffffff"/>
+  
+  <!-- Mouth -->
+  <rect x="96" y="158" width="64" height="12" rx="6" fill="#ffffff"/>
+  
+  <!-- Left Arm -->
+  <rect x="26" y="98" width="20" height="52" rx="10" fill="#000000"/>
+  
+  <!-- Right Arm -->
+  <rect x="210" y="98" width="20" height="52" rx="10" fill="#000000"/>
+  
+  <!-- Antenna Base -->
+  <circle cx="128" cy="26" r="10" fill="#000000"/>
+  
+  <!-- Antenna -->
+  <rect x="124" y="6" width="8" height="20" rx="4" fill="#000000"/>
+</svg>
