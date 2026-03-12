@@ -1,0 +1,14 @@
+PLACEHOLDER PNG
+================
+File: jsebot-icon-256.png
+Created: 2026-03-12T21:21:25.581Z
+Status: Placeholder - replace with real PNG export
+
+How to replace:
+1. Export from SVG using: https://www.svgtoimg.com/
+2. Save the real PNG here with the same filename
+3. This file will be overwritten
+
+Source SVGs:
+- jsebot-icon.svg (color variant)
+- jsebot-icon-silhouette.svg (black variant)
