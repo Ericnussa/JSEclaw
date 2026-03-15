@@ -1,6 +1,6 @@
 {
   "name": "jsebot",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "JSEBot: personal AI assistant & SDK (OpenClaw fork). Rubi-powered agent framework for CLI, IoT, and cloud.",
   "keywords": [
     "agent",
@@ -59,7 +59,7 @@
     "url": "https://github.com/sponsors/Ericnussa"
   },
   "bin": {
-    "jsebot": "jsebot.mjs",
+    "jsebot": "./bin/jsebot.mjs",
     "jseclaw": "jseclaw.mjs",
     "openclaw": "openclaw.mjs"
   },
