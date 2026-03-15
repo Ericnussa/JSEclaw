@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubi Handheld - Pi 5 Display Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0a0e27;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 900px;
+    }
+
+    /* Canvas Area */
+    .canvas-area {
+      flex: 0 0 auto;
+    }
+
+    canvas {
+      display: block;
+      width: 320px;
+      height: 480px;
+      border: 3px solid #00d4ff;
+      border-radius: 8px;
+      background: #0a0e27;
+      image-rendering: pixelated;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Control Panel */
+    .control-panel {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .panel-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00d4ff;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Status Display */
+    .status-box {
+      background: #1a2351;
+      border: 1px solid #00d4ff;
+      border-radius: 4px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .status-label {
+      color: #888;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    #state-display {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00d4ff;
+      text-align: center;
+    }
+
+    /* Memory Display */
+    #memory-display {
+      font-size: 11px;
+      color: #888;
+      margin-top: 10px;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    /* State Buttons */
+    .state-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .state-btn {
+      padding: 10px;
+      background: #1a2351;
+      border: 1px solid #00d4ff;
+      color: #00d4ff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+
+    .state-btn:hover {
+      background: #2a3361;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+      transform: scale(1.05);
+    }
+
+    .state-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Demo Button */
+    #btn-demo {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #00d4ff, #0084ff);
+      border: none;
+      color: #0a0e27;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+    }
+
+    #btn-demo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    }
+
+    #btn-demo:active {
+      transform: scale(0.98);
+    }
+
+    /* Settings Button */
+    #btn-settings {
+      width: 100%;
+      padding: 10px;
+      background: #1a2351;
+      border: 1px solid #00d4ff;
+      color: #00d4ff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    #btn-settings:hover {
+      background: #2a3361;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: #1a2351;
+      border: 1px solid #1a5a6a;
+      border-radius: 4px;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      color: #00d4ff;
+    }
+
+    /* Keyboard Shortcuts */
+    .shortcuts {
+      background: #0a0e27;
+      border: 1px solid #1a5a6a;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 11px;
+    }
+
+    .shortcut-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      color: #888;
+    }
+
+    .shortcut-key {
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    /* Settings Modal */
+    #settings-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .settings-content {
+      background: #0a0e27;
+      border: 2px solid #00d4ff;
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .settings-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #00d4ff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .settings-item {
+      margin-bottom: 15px;
+    }
+
+    .settings-label {
+      color: #888;
+      font-size: 12px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .settings-value {
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    .settings-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .settings-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #00d4ff;
+      background: #1a2351;
+      color: #00d4ff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .settings-btn:hover {
+      background: #2a3361;
+    }
+
+    #close-settings {
+      margin-left: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      canvas {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .control-panel {
+        min-width: auto;
+      }
+    }
+
+    /* Mobile Canvas Size */
+    @media (max-width: 600px) {
+      canvas {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Canvas Area -->
+    <div class="canvas-area">
+      <canvas id="handheld-canvas" width="320" height="480"></canvas>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+      <div class="panel-title">🤖 Rubi Control</div>
+
+      <!-- State Display -->
+      <div class="status-box">
+        <div class="status-label">Current State</div>
+        <div id="state-display">IDLE</div>
+        <div id="memory-display">Initializing...</div>
+      </div>
+
+      <!-- Quick Demo -->
+      <button id="btn-demo">▶️ Run Full Demo</button>
+
+      <!-- State Selection -->
+      <div class="state-grid">
+        <button class="state-btn" data-state="idle">😴 Idle</button>
+        <button class="state-btn" data-state="blink">👁️ Blink</button>
+        <button class="state-btn" data-state="thinking">🧠 Think</button>
+        <button class="state-btn" data-state="talking">💬 Talk</button>
+        <button class="state-btn" data-state="success">✨ Success</button>
+        <button class="state-btn" data-state="error">❌ Error</button>
+      </div>
+
+      <!-- Settings -->
+      <button id="btn-settings">⚙️ Settings</button>
+
+      <!-- Info -->
+      <div class="info-box">
+        <strong>ℹ️ About</strong>
+        <br />
+        Rubi Avatar Animation Engine for Pi 5
+        <br />
+        Phase 3 of JSEBot
+      </div>
+
+      <!-- Keyboard Shortcuts -->
+      <div class="shortcuts">
+        <strong style="color: #00d4ff">⌨️ Keyboard:</strong>
+        <div class="shortcut-item">
+          <span class="shortcut-key">1</span>
+          <span>Idle</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-key">2</span>
+          <span>Blink</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-key">3</span>
+          <span>Thinking</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-key">4</span>
+          <span>Talking</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-key">5</span>
+          <span>Success</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-key">SPACE</span>
+          <span>Run Demo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal">
+    <div class="settings-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px">
+        <div class="settings-title">⚙️ Settings</div>
+        <button id="close-settings" style="
+          background: none;
+          border: none;
+          color: #00d4ff;
+          font-size: 20px;
+          cursor: pointer;
+        ">✕</button>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-label">Target FPS</div>
+        <div class="settings-value">30</div>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-label">Display Resolution</div>
+        <div class="settings-value">320×480</div>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-label">Sprite Cache</div>
+        <div class="settings-value">10 MB</div>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-label">Theme</div>
+        <div class="settings-value">Dark Mode</div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="settings-btn" onclick="location.reload()">Refresh</button>
+        <button class="settings-btn" id="close-settings">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/components/sprite-engine.js"></script>
+  <script src="../assets/components/pi-handheld.js"></script>
+  <script src="./demo-handheld.js"></script>
+</body>
+</html>
