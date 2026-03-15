@@ -19,7 +19,7 @@
 
 ## 🚀 What is JSEBot?
 
-**JSEBot** is a custom distribution of [OpenClaw](https://github.com/openclaw/openclaw) — a personal AI assistant platform that runs on your own devices with full control over privacy, data, and integrations.
+**JSEBot** is a personal AI assistant that runs locally on your devices — with full control over privacy, data, and integrations.
 
 - 🤖 **Your AI, Your Rules** — Deploy locally, keep data private, use any LLM (Anthropic, OpenAI, local models)
 - 💬 **Multi-Channel** — Seamless replies on WhatsApp, Telegram, Slack, Discord, Signal, iMessage, Google Chat, and 15+ others
@@ -437,8 +437,8 @@ See [Security Policy](SECURITY.md) for details.
 **Q: Is JSEBot free?**  
 A: Yes! JSEBot is MIT-licensed open source. You pay for LLM API calls (OpenAI, Anthropic) or run local models for free.
 
-**Q: Does it send data to OpenClaw servers?**  
-A: No. Your gateway runs locally. Only channel connections (WhatsApp, Telegram, etc.) need internet; you control the data flow.
+**Q: Is it private?**  
+A: Yes. Your gateway runs locally. Only channel connections (WhatsApp, Telegram, etc.) need internet; you control the data flow.
 
 **Q: Can I use local models?**  
 A: Yes! Ollama, LLaMA.cpp, Hugging Face, vLLM all work. See [Model Setup](docs/CONFIG.md#local-models).
@@ -475,7 +475,6 @@ More FAQ: See [FAQ](docs/FAQ.md).
 
 JSEBot stands on the shoulders of giants:
 
-- **[OpenClaw](https://github.com/openclaw/openclaw)** — The incredible platform we fork from
 - **[Claude](https://claude.ai)** — AI model powering thoughtful responses
 - **[Anthropic](https://anthropic.com)** — Pushing AI safety forward
 - **Community** — Contributors, testers, and feedback providers
