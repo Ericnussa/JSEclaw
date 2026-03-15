@@ -8,7 +8,7 @@ import { createInterface } from "readline";
 const configDir = join(homedir(), ".jsebot");
 const configFile = join(configDir, "config.json");
 
-const version = "0.5.2";
+const version = "2026.3.15";
 
 const loadConfig = () => {
   if (!existsSync(configFile)) {
