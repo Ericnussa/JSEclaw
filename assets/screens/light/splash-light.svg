@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="JSEBot light mode splash screen">
+  <defs>
+    <!-- Main gradient for branding (darker blue for light mode) -->
+    <linearGradient id="lightMainGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    
+    <!-- Soft glow effect for light mode -->
+    <radialGradient id="lightGlowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#0369a1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Light background gradient -->
+    <linearGradient id="lightBgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    
+    <!-- Soft glow filter -->
+    <filter id="softGlowLight">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#lightBgGradient)"/>
+  
+  <!-- Subtle accent grid lines (light) -->
+  <g stroke="#0284c7" stroke-width="1" opacity="0.1">
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="480" y1="0" x2="480" y2="1080" opacity="0.05"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080" opacity="0.05"/>
+  </g>
+  
+  <!-- Soft glow circle background for robot -->
+  <circle cx="960" cy="420" r="280" fill="url(#lightGlowGradient)" opacity="0.7"/>
+  
+  <!-- Robot Icon Container -->
+  <g transform="translate(960, 420)" filter="url(#softGlowLight)">
+    <!-- Scale factor: 520/256 = 2.03125 -->
+    <g transform="scale(2.03125)">
+      <!-- Body with solid fill -->
+      <rect x="44" y="56" width="168" height="140" rx="26" fill="url(#lightMainGradient)" stroke="#0369a1" stroke-width="8"/>
+      
+      <!-- Head (lighter accent) -->
+      <rect x="78" y="26" width="100" height="36" rx="14" fill="#0ea5e9" stroke="#0369a1" stroke-width="8"/>
+      
+      <!-- Left Eye -->
+      <circle cx="100" cy="122" r="16" fill="#0f172a"/>
+      <circle cx="105" cy="119" r="5" fill="white" opacity="0.8"/>
+      
+      <!-- Right Eye -->
+      <circle cx="156" cy="122" r="16" fill="#0f172a"/>
+      <circle cx="161" cy="119" r="5" fill="white" opacity="0.8"/>
+      
+      <!-- Mouth -->
+      <rect x="96" y="158" width="64" height="12" rx="6" fill="#0f172a"/>
+      
+      <!-- Left Arm -->
+      <rect x="26" y="98" width="20" height="52" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="8"/>
+      
+      <!-- Right Arm -->
+      <rect x="210" y="98" width="20" height="52" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="8"/>
+      
+      <!-- Antenna Base -->
+      <circle cx="128" cy="26" r="10" fill="#0f172a"/>
+      
+      <!-- Antenna -->
+      <rect x="124" y="6" width="8" height="20" rx="4" fill="#0f172a"/>
+    </g>
+  </g>
+  
+  <!-- JSEBot Title (darker text for light background) -->
+  <text x="960" y="780" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="96" font-weight="700" text-anchor="middle" fill="#0284c7" letter-spacing="2">
+    JSEBot
+  </text>
+  
+  <!-- Tagline (darker text) -->
+  <text x="960" y="860" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="32" text-anchor="middle" fill="#0369a1" opacity="0.8" letter-spacing="0.5">
+    Your AI-Powered CLI Assistant
+  </text>
+  
+  <!-- Version (subtle) -->
+  <text x="960" y="1020" font-family="'Monaco', 'Courier New', monospace" font-size="18" text-anchor="middle" fill="#0284c7" opacity="0.6">
+    v0.1.1
+  </text>
+</svg>

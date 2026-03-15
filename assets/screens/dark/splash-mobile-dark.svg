@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="960" viewBox="0 0 540 960" role="img" aria-label="JSEBot dark mode mobile splash screen">
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="mobileMainGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <radialGradient id="mobileGlowGradient" cx="50%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Background gradient -->
+    <linearGradient id="mobileBgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+    
+    <!-- Neon glow filter -->
+    <filter id="mobileNeonGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="540" height="960" fill="url(#mobileBgGradient)"/>
+  
+  <!-- Subtle vertical grid line -->
+  <g stroke="#0ea5e9" stroke-width="1" opacity="0.08">
+    <line x1="270" y1="0" x2="270" y2="960"/>
+  </g>
+  
+  <!-- Glow circle background for robot (upper third) -->
+  <circle cx="270" cy="240" r="140" fill="url(#mobileGlowGradient)"/>
+  
+  <!-- Glow ring -->
+  <circle cx="270" cy="240" r="130" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.25"/>
+  
+  <!-- Robot Icon Container - Mobile optimized -->
+  <g transform="translate(270, 240)" filter="url(#mobileNeonGlow)">
+    <!-- Scale factor: 260/256 = 1.015625 for mobile size -->
+    <g transform="scale(1.015625)">
+      <!-- Body -->
+      <rect x="44" y="56" width="168" height="140" rx="26" fill="url(#mobileMainGradient)" stroke="#06b6d4" stroke-width="8" opacity="0.95"/>
+      
+      <!-- Head -->
+      <rect x="78" y="26" width="100" height="36" rx="14" fill="#0ea5e9" stroke="#06b6d4" stroke-width="6"/>
+      
+      <!-- Left Eye -->
+      <circle cx="100" cy="122" r="16" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+      <circle cx="100" cy="122" r="12" fill="#0ea5e9" opacity="0.7"/>
+      
+      <!-- Right Eye -->
+      <circle cx="156" cy="122" r="16" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+      <circle cx="156" cy="122" r="12" fill="#0ea5e9" opacity="0.7"/>
+      
+      <!-- Mouth -->
+      <rect x="96" y="158" width="64" height="12" rx="6" fill="#0ea5e9"/>
+      
+      <!-- Left Arm -->
+      <rect x="26" y="98" width="20" height="52" rx="10" fill="#06b6d4" stroke="#0ea5e9" stroke-width="4" opacity="0.9"/>
+      
+      <!-- Right Arm -->
+      <rect x="210" y="98" width="20" height="52" rx="10" fill="#06b6d4" stroke="#0ea5e9" stroke-width="4" opacity="0.9"/>
+      
+      <!-- Antenna -->
+      <circle cx="128" cy="26" r="8" fill="#0ea5e9"/>
+      <rect x="125" y="10" width="6" height="16" rx="3" fill="#06b6d4" stroke="#0ea5e9" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- JSEBot Title (mobile-optimized size) -->
+  <text x="270" y="410" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="56" font-weight="700" text-anchor="middle" fill="#06b6d4" letter-spacing="2">
+    JSEBot
+  </text>
+  
+  <!-- Tagline (mobile-optimized, split into two lines) -->
+  <text x="270" y="465" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="20" text-anchor="middle" fill="#bae6fd" opacity="0.85" letter-spacing="0.5">
+    Your AI-Powered
+  </text>
+  <text x="270" y="495" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="20" text-anchor="middle" fill="#bae6fd" opacity="0.85" letter-spacing="0.5">
+    CLI Assistant
+  </text>
+  
+  <!-- Features (mobile-friendly layout) -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="16" fill="#0ea5e9" text-anchor="middle">
+    <!-- Feature 1 -->
+    <text x="270" y="580" font-size="24">🤖</text>
+    <text x="270" y="610" font-weight="600" font-size="14">AI Assistant</text>
+    
+    <!-- Feature 2 -->
+    <text x="270" y="670" font-size="24">🔌</text>
+    <text x="270" y="700" font-weight="600" font-size="14">Multi-Channel</text>
+    
+    <!-- Feature 3 -->
+    <text x="270" y="760" font-size="24">🛠️</text>
+    <text x="270" y="790" font-weight="600" font-size="14">Extensible</text>
+  </g>
+  
+  <!-- Version (subtle, at bottom) -->
+  <text x="270" y="880" font-family="'Monaco', 'Courier New', monospace" font-size="14" text-anchor="middle" fill="#0ea5e9" opacity="0.6">
+    v0.1.1
+  </text>
+</svg>

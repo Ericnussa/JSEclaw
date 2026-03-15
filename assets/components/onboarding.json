@@ -1,0 +1,290 @@
+{
+  "version": "1.0.0",
+  "name": "JSEBot Onboarding Flow",
+  "description": "Interactive first-run onboarding experience for JSEBot CLI",
+  "screens": [
+    {
+      "id": "welcome",
+      "title": "Welcome to JSEBot!",
+      "subtitle": "Your AI-Powered CLI Assistant",
+      "layout": "fullscreen",
+      "content": {
+        "type": "welcome",
+        "heading": "Welcome to JSEBot",
+        "message": "JSEBot is your intelligent CLI assistant powered by Claude AI.",
+        "features": [
+          {
+            "icon": "🤖",
+            "title": "AI Assistant",
+            "description": "Powered by Claude AI for intelligent responses"
+          },
+          {
+            "icon": "🔌",
+            "title": "Multi-Channel",
+            "description": "Seamlessly integrate with Discord, Slack, Telegram, and more"
+          },
+          {
+            "icon": "🛠️",
+            "title": "Extensible",
+            "description": "Create custom skills and plugins for your needs"
+          }
+        ],
+        "avatarAsset": "splash-welcome.svg",
+        "avatarAlt": "Rubi welcoming you to JSEBot"
+      },
+      "actions": [
+        {
+          "id": "next_setup",
+          "label": "Get Started",
+          "style": "primary",
+          "navigation": "setup",
+          "icon": "→"
+        },
+        {
+          "id": "skip_onboarding",
+          "label": "Skip",
+          "style": "secondary",
+          "navigation": "done",
+          "icon": "⊘"
+        }
+      ],
+      "animation": {
+        "entrance": "fade-in",
+        "duration": 500,
+        "robotAnimation": "wave"
+      }
+    },
+    {
+      "id": "setup",
+      "title": "Quick Setup",
+      "subtitle": "Configure your JSEBot instance",
+      "layout": "fullscreen",
+      "content": {
+        "type": "form",
+        "heading": "Let's Set You Up",
+        "message": "Configure your JSEBot with a few quick steps. You can change these later.",
+        "fields": [
+          {
+            "id": "bot_name",
+            "label": "Bot Name",
+            "placeholder": "Enter a name for your bot",
+            "type": "text",
+            "default": "JSEBot",
+            "required": true,
+            "help": "This will be displayed in channel messages"
+          },
+          {
+            "id": "enable_logging",
+            "label": "Enable Debug Logging",
+            "type": "checkbox",
+            "default": false,
+            "help": "Enable detailed logging for troubleshooting"
+          },
+          {
+            "id": "check_updates",
+            "label": "Check for Updates",
+            "type": "checkbox",
+            "default": true,
+            "help": "Automatically check for new versions"
+          }
+        ],
+        "avatarAsset": "rubi-avatar.jpg",
+        "avatarExpression": "thinking"
+      },
+      "actions": [
+        {
+          "id": "next_config",
+          "label": "Next",
+          "style": "primary",
+          "navigation": "config",
+          "icon": "→"
+        },
+        {
+          "id": "back_welcome",
+          "label": "Back",
+          "style": "tertiary",
+          "navigation": "welcome",
+          "icon": "←"
+        }
+      ],
+      "animation": {
+        "entrance": "slide-right",
+        "duration": 300,
+        "robotAnimation": "blink"
+      }
+    },
+    {
+      "id": "config",
+      "title": "Configuration",
+      "subtitle": "Choose your preferred channels",
+      "layout": "fullscreen",
+      "content": {
+        "type": "checklist",
+        "heading": "Select Channels",
+        "message": "Choose which channels you'd like to connect JSEBot to. You can add more later.",
+        "items": [
+          {
+            "id": "discord",
+            "icon": "💬",
+            "label": "Discord",
+            "description": "Connect to Discord servers",
+            "enabled": true,
+            "helpText": "Requires Discord bot token"
+          },
+          {
+            "id": "slack",
+            "icon": "🔗",
+            "label": "Slack",
+            "description": "Integrate with Slack workspaces",
+            "enabled": false,
+            "helpText": "Requires Slack app credentials"
+          },
+          {
+            "id": "telegram",
+            "icon": "📱",
+            "label": "Telegram",
+            "description": "Chat via Telegram",
+            "enabled": false,
+            "helpText": "Requires Telegram bot token"
+          },
+          {
+            "id": "custom",
+            "icon": "🔧",
+            "label": "Custom",
+            "description": "Use custom plugins",
+            "enabled": false,
+            "helpText": "Requires plugin development"
+          }
+        ],
+        "avatarAsset": "rubi-avatar.jpg",
+        "avatarExpression": "smile"
+      },
+      "actions": [
+        {
+          "id": "next_finish",
+          "label": "Finish Setup",
+          "style": "primary",
+          "navigation": "done",
+          "icon": "✓"
+        },
+        {
+          "id": "back_setup",
+          "label": "Back",
+          "style": "tertiary",
+          "navigation": "setup",
+          "icon": "←"
+        }
+      ],
+      "animation": {
+        "entrance": "slide-right",
+        "duration": 300,
+        "robotAnimation": "nod"
+      }
+    },
+    {
+      "id": "done",
+      "title": "All Set!",
+      "subtitle": "You're ready to go",
+      "layout": "fullscreen",
+      "content": {
+        "type": "completion",
+        "heading": "Setup Complete!",
+        "message": "JSEBot is now configured and ready to use.",
+        "checkmarks": [
+          {
+            "label": "Configuration saved",
+            "completed": true
+          },
+          {
+            "label": "Channels connected",
+            "completed": true
+          },
+          {
+            "label": "Ready to assist",
+            "completed": true
+          }
+        ],
+        "nextSteps": "Type 'jsebot help' to see available commands, or 'jsebot chat' to start chatting.",
+        "avatarAsset": "splash-startup.svg",
+        "avatarExpression": "thumbsup"
+      },
+      "actions": [
+        {
+          "id": "close_onboarding",
+          "label": "Start Using JSEBot",
+          "style": "primary",
+          "action": "close",
+          "icon": "✓"
+        },
+        {
+          "id": "open_docs",
+          "label": "View Documentation",
+          "style": "secondary",
+          "action": "open-docs",
+          "icon": "📖"
+        }
+      ],
+      "animation": {
+        "entrance": "zoom-in",
+        "duration": 400,
+        "robotAnimation": "celebrate"
+      }
+    }
+  ],
+  "theme": {
+    "dark": {
+      "background": "#0f172a",
+      "backgroundSecondary": "#082f49",
+      "text": "#f1f5f9",
+      "textSecondary": "#bae6fd",
+      "accent": "#7dd3fc",
+      "accentDark": "#38bdf8",
+      "success": "#10b981",
+      "error": "#ef4444",
+      "warning": "#f59e0b"
+    },
+    "light": {
+      "background": "#f8fafc",
+      "backgroundSecondary": "#e0f2fe",
+      "text": "#0f172a",
+      "textSecondary": "#1e3a5f",
+      "accent": "#38bdf8",
+      "accentDark": "#0284c7",
+      "success": "#059669",
+      "error": "#dc2626",
+      "warning": "#d97706"
+    }
+  },
+  "timing": {
+    "screenDurationMs": 5000,
+    "animationDurationMs": 300,
+    "transitionDurationMs": 200,
+    "autoAdvanceMs": 0
+  },
+  "robot": {
+    "avatarDefault": "avatars/rubi-avatar.jpg",
+    "spriteSheet": "avatars/rubi-sprites-320x480.png",
+    "expressions": {
+      "wave": { "frame": 0, "duration": 600, "loop": true },
+      "thinking": { "frame": 1, "duration": 400, "loop": true },
+      "smile": { "frame": 2, "duration": 0, "loop": false },
+      "nod": { "frame": 3, "duration": 400, "loop": true },
+      "thumbsup": { "frame": 4, "duration": 0, "loop": false },
+      "celebrate": { "frame": 5, "duration": 500, "loop": true },
+      "blink": { "frame": 6, "duration": 150, "loop": true }
+    }
+  },
+  "storage": {
+    "configPath": "~/.jsebot/config.json",
+    "onboardingCompletedKey": "onboarding_completed_v1",
+    "persistFields": [
+      "bot_name",
+      "enable_logging",
+      "check_updates",
+      "discord",
+      "slack",
+      "telegram",
+      "custom"
+    ]
+  }
+}

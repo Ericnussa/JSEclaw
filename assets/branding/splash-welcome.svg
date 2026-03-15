@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="JSEBot welcome splash screen">
+  <defs>
+    <!-- Main gradient for branding -->
+    <linearGradient id="mainGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    
+    <!-- Accent gradient for feature highlights -->
+    <linearGradient id="accentGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    
+    <!-- Subtle glow effect -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Background gradient - friendly warm dark -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+    
+    <!-- Filter for soft glow -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative accent circles -->
+  <circle cx="150" cy="150" r="120" fill="url(#glowGradient)" opacity="0.15"/>
+  <circle cx="1800" cy="900" r="150" fill="url(#glowGradient)" opacity="0.15"/>
+  
+  <!-- Glow circle background for robot -->
+  <circle cx="960" cy="350" r="280" fill="url(#glowGradient)" opacity="0.6"/>
+  
+  <!-- Robot Icon Container - Waving (left arm raised) -->
+  <g transform="translate(960, 350)" filter="url(#softGlow)">
+    <!-- Scale factor: 520/256 = 2.03125 -->
+    <g transform="scale(2.03125)">
+      <!-- Body -->
+      <rect x="44" y="56" width="168" height="140" rx="26" fill="url(#mainGradient)" stroke="#0f172a" stroke-width="8"/>
+      
+      <!-- Head -->
+      <rect x="78" y="26" width="100" height="36" rx="14" fill="#bae6fd" stroke="#0f172a" stroke-width="8"/>
+      
+      <!-- Left Eye - Happy -->
+      <circle cx="100" cy="122" r="16" fill="#0f172a"/>
+      <circle cx="100" cy="122" r="6" fill="#7dd3fc" cx="102" cy="120"/>
+      
+      <!-- Right Eye - Happy -->
+      <circle cx="156" cy="122" r="16" fill="#0f172a"/>
+      <circle cx="156" cy="122" r="6" fill="#7dd3fc" cx="158" cy="120"/>
+      
+      <!-- Mouth - smile -->
+      <path d="M 96 168 Q 128 175 160 168" stroke="#0f172a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      
+      <!-- Left Arm - Waving (raised at angle) -->
+      <g transform="rotate(-45 36 124)">
+        <rect x="26" y="98" width="20" height="52" rx="10" fill="#7dd3fc" stroke="#0f172a" stroke-width="8"/>
+      </g>
+      
+      <!-- Right Arm -->
+      <rect x="210" y="98" width="20" height="52" rx="10" fill="#7dd3fc" stroke="#0f172a" stroke-width="8"/>
+      
+      <!-- Antenna Base -->
+      <circle cx="128" cy="26" r="10" fill="#0f172a"/>
+      
+      <!-- Antenna -->
+      <rect x="124" y="6" width="8" height="20" rx="4" fill="#0f172a"/>
+    </g>
+  </g>
+  
+  <!-- Welcome Title -->
+  <text x="960" y="720" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="88" font-weight="700" text-anchor="middle" fill="#7dd3fc" letter-spacing="2">
+    Welcome to JSEBot!
+  </text>
+  
+  <!-- Feature Row -->
+  <g text-anchor="middle">
+    <!-- Feature 1 -->
+    <text x="480" y="860" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="26" fill="#bae6fd" letter-spacing="0.5">
+      🤖 AI Assistant
+    </text>
+    
+    <!-- Feature 2 -->
+    <text x="960" y="860" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="26" fill="#bae6fd" letter-spacing="0.5">
+      🔌 Multi-Channel
+    </text>
+    
+    <!-- Feature 3 -->
+    <text x="1440" y="860" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="26" fill="#bae6fd" letter-spacing="0.5">
+      🛠️ Extensible
+    </text>
+  </g>
+  
+  <!-- Decorative separators -->
+  <line x1="360" y1="835" x2="600" y2="835" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="1320" y1="835" x2="1560" y2="835" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+</svg>
