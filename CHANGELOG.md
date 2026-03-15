@@ -2,6 +2,18 @@
 
 Docs: https://docs.openclaw.ai
 
+## 0.5.1 (2026-03-15)
+
+### Features
+
+- **CLI Wrapper:** Add standalone JSEBot CLI wrapper with onboarding wizard. Hides OpenClaw complexity, provides beginner-friendly experience (install → onboard → chat). (#1)
+
+### Fixes
+
+- Correct wrapper initialization for fresh installations.
+
+---
+
 ## 2026.3.2 (Unreleased)
 
 ### Changes

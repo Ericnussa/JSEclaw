@@ -1,6 +1,6 @@
 {
   "name": "jsebot",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "JSEBot: personal AI assistant & SDK (OpenClaw fork). Rubi-powered agent framework for CLI, IoT, and cloud.",
   "keywords": [
     "agent",
