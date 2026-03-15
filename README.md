@@ -9,9 +9,15 @@
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square&color=00d9ff&labelColor=0a0e27)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D22-00d9ff?style=flat-square&labelColor=0a0e27)](https://nodejs.org)
 
-**Your personal AI assistant — local, fast, and always-on.**
+**JSEBot is a personal AI assistant you chat with.**
 
-[Install](#-install) · [Quick Start](#-quick-start) · [Features](#-features) · [Docs](docs/) · [Vision](VISION.md) · [Contributing](CONTRIBUTING.md)
+It takes **2 minutes to install.**
+
+**Ready? → [START HERE: Simple Install Guide](INSTALL-SIMPLE.md)**
+
+Or pick your OS: [Windows](INSTALL-WINDOWS.md) · [Mac](INSTALL-MAC.md) · [Linux](INSTALL-LINUX-SIMPLE.md) · [Kali](INSTALL-KALI-SIMPLE.md)
+
+For developers: [Docs](docs/) · [Vision](VISION.md) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
