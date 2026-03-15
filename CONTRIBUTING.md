@@ -1,161 +1,334 @@
-# Contributing to OpenClaw
+# Contributing to JSEBot
 
-Welcome to the lobster tank! 🦞
+Thanks for your interest in contributing! JSEBot is a community project, and we welcome all kinds of help.
 
-## Quick Links
+## 🤝 Ways to Contribute
 
-- **GitHub:** https://github.com/openclaw/openclaw
-- **Vision:** [`VISION.md`](VISION.md)
-- **Discord:** https://discord.gg/qkhbAGHRBT
-- **X/Twitter:** [@steipete](https://x.com/steipete) / [@openclaw](https://x.com/openclaw)
+- **Bug reports** — Found an issue? [Open an issue](https://github.com/Ericnussa/JSEclaw/issues/new)
+- **Feature ideas** — Have an idea? [Start a discussion](https://github.com/Ericnussa/JSEclaw/discussions)
+- **Code** — Fix a bug or build a feature (see below)
+- **Documentation** — Improve guides, add examples, fix typos
+- **Skills** — Publish reusable tools to the [Skills Marketplace](docs/SKILLS.md)
+- **Design** — Help with UI/UX, branding, or graphics
 
-## Maintainers
+## 🚀 Development Setup
 
-- **Peter Steinberger** - Benevolent Dictator
-  - GitHub: [@steipete](https://github.com/steipete) · X: [@steipete](https://x.com/steipete)
+### Prerequisites
 
-- **Shadow** - Discord subsystem, Discord admin, Clawhub, all community moderation
-  - GitHub: [@thewilloftheshadow](https://github.com/thewilloftheshadow) · X: [@4shad0wed](https://x.com/4shad0wed)
+- **Node ≥22** — Check with `node --version`
+- **pnpm** — `npm install -g pnpm` (faster than npm)
+- **Git** — For cloning and submitting PRs
 
-- **Vignesh** - Memory (QMD), formal modeling, TUI, IRC, and Lobster
-  - GitHub: [@vignesh07](https://github.com/vignesh07) · X: [@\_vgnsh](https://x.com/_vgnsh)
+### Quick Start
 
-- **Jos** - Telegram, API, Nix mode
-  - GitHub: [@joshp123](https://github.com/joshp123) · X: [@jjpcodes](https://x.com/jjpcodes)
+```bash
+# Clone the repo
+git clone https://github.com/Ericnussa/JSEclaw.git
+cd JSEclaw
 
-- **Ayaan Zaidi** - Telegram subsystem, iOS app
-  - GitHub: [@obviyus](https://github.com/obviyus) · X: [@0bviyus](https://x.com/0bviyus)
+# Install dependencies
+pnpm install
 
-- **Tyler Yust** - Agents/subagents, cron, BlueBubbles, macOS app
-  - GitHub: [@tyler6204](https://github.com/tyler6204) · X: [@tyleryust](https://x.com/tyleryust)
+# Build from source
+pnpm build
 
-- **Mariano Belinky** - iOS app, Security
-  - GitHub: [@mbelinky](https://github.com/mbelinky) · X: [@belimad](https://x.com/belimad)
+# Run tests
+pnpm test
 
-- **Nimrod Gutman** - iOS app, macOS app and crustacean features
-  - GitHub: [@ngutman](https://github.com/ngutman) · X: [@theguti](https://x.com/theguti)
-
-- **Vincent Koc** - Agents, Telemetry, Hooks, Security
-  - GitHub: [@vincentkoc](https://github.com/vincentkoc) · X: [@vincent_koc](https://x.com/vincent_koc)
-
-- **Val Alexander** - UI/UX, Docs, and Agent DevX
-  - GitHub: [@BunsDev](https://github.com/BunsDev) · X: [@BunsDev](https://x.com/BunsDev)
-
-- **Seb Slight** - Docs, Agent Reliability, Runtime Hardening
-  - GitHub: [@sebslight](https://github.com/sebslight) · X: [@sebslig](https://x.com/sebslig)
-
-- **Christoph Nakazawa** - JS Infra
-  - GitHub: [@cpojer](https://github.com/cpojer) · X: [@cnakazawa](https://x.com/cnakazawa)
-
-- **Gustavo Madeira Santana** - Multi-agents, CLI, web UI
-  - GitHub: [@gumadeiras](https://github.com/gumadeiras) · X: [@gumadeiras](https://x.com/gumadeiras)
-
-- **Onur Solmaz** - Agents, dev workflows, ACP integrations, MS Teams
-  - GitHub: [@onutc](https://github.com/onutc), [@osolmaz](https://github.com/osolmaz) · X: [@onusoz](https://x.com/onusoz)
-
-- **Josh Avant** - Core, CLI, Gateway, Security, Agents
-  - GitHub: [@joshavant](https://github.com/joshavant) · X: [@joshavant](https://x.com/joshavant)
-
-- **Jonathan Taylor** - ACP subsystem, Gateway features/bugs, Gog/Mog/Sog CLI's, SEDMAT
-  - Github [@visionik](https://github.com/visionik) · X: [@visionik](https://x.com/visionik)
-- **Josh Lehman** - Compaction, Tlon/Urbit subsystem
-  - Github [@jalehman](https://github.com/jalehman) · X: [@jlehman\_](https://x.com/jlehman_)
-
-## How to Contribute
-
-1. **Bugs & small fixes** → Open a PR!
-2. **New features / architecture** → Start a [GitHub Discussion](https://github.com/openclaw/openclaw/discussions) or ask in Discord first
-3. **Questions** → Discord [#help](https://discord.com/channels/1456350064065904867/1459642797895319552) / [#users-helping-users](https://discord.com/channels/1456350064065904867/1459007081603403828)
-
-## Before You PR
-
-- Test locally with your OpenClaw instance
-- Run tests: `pnpm build && pnpm check && pnpm test`
-- Ensure CI checks pass
-- Keep PRs focused (one thing per PR; do not mix unrelated concerns)
-- Describe what & why
-
-## Control UI Decorators
-
-The Control UI uses Lit with **legacy** decorators (current Rollup parsing does not support
-`accessor` fields required for standard decorators). When adding reactive fields, keep the
-legacy style:
-
-```ts
-@state() foo = "bar";
-@property({ type: Number }) count = 0;
+# Start dev mode (auto-reload on changes)
+pnpm gateway:watch
 ```
 
-The root `tsconfig.json` is configured for legacy decorators (`experimentalDecorators: true`)
-with `useDefineForClassFields: false`. Avoid flipping these unless you are also updating the UI
-build tooling to support standard decorators.
+### Directory Structure
 
-## AI/Vibe-Coded PRs Welcome! 🤖
+```
+JSEclaw/
+├── src/                   # TypeScript source
+│   ├── cli/               # Command-line interface
+│   ├── gateway/           # Control plane daemon
+│   ├── channels/          # Chat platform integrations
+│   ├── plugins/           # Plugin system
+│   └── tools/             # First-class tools
+├── assets/                # Branding, icons, sprites
+│   ├── branding/          # Logo, icons (Phase 1)
+│   ├── screens/           # Splash screens (Phase 2)
+│   └── components/        # Sprite engine (Phase 3)
+├── docs/                  # Documentation
+├── test/                  # Test files
+├── dist/                  # Compiled output (generated)
+└── package.json           # Dependencies
+```
 
-Built with Codex, Claude, or other AI tools? **Awesome - just mark it!**
+## 🐛 Bug Reports
 
-Please include in your PR:
+### Before Submitting
 
-- [ ] Mark as AI-assisted in the PR title or description
-- [ ] Note the degree of testing (untested / lightly tested / fully tested)
-- [ ] Include prompts or session logs if possible (super helpful!)
-- [ ] Confirm you understand what the code does
+1. **Search existing issues** — Your bug might already be reported
+2. **Check the FAQ** — Common issues documented there
+3. **Gather info:**
+   - JSEBot version: `jsebot --version`
+   - Node version: `node --version`
+   - OS: macOS, Linux, Windows (WSL), etc.
+   - Channels affected: Discord, WhatsApp, etc.
+   - Error message or unexpected behavior
 
-AI PRs are first-class citizens here. We just want transparency so reviewers know what to look for.
+### Issue Template
 
-## Current Focus & Roadmap 🗺
+```markdown
+## Description
 
-We are currently prioritizing:
+Brief description of the bug.
 
-- **Stability**: Fixing edge cases in channel connections (WhatsApp/Telegram).
-- **UX**: Improving the onboarding wizard and error messages.
-- **Skills**: For skill contributions, head to [ClawHub](https://clawhub.ai/) — the community hub for OpenClaw skills.
-- **Performance**: Optimizing token usage and compaction logic.
+## Steps to Reproduce
 
-Check the [GitHub Issues](https://github.com/openclaw/openclaw/issues) for "good first issue" labels!
+1. Install JSEBot
+2. Run `jsebot agent --message "..."`
+3. Observe unexpected behavior
 
-## Maintainers
+## Expected Behavior
 
-We're selectively expanding the maintainer team.
-If you're an experienced contributor who wants to help shape OpenClaw's direction — whether through code, docs, or community — we'd like to hear from you.
+What should happen
 
-Being a maintainer is a responsibility, not an honorary title. We expect active, consistent involvement — triaging issues, reviewing PRs, and helping move the project forward.
+## Actual Behavior
 
-Still interested? Email contributing@openclaw.ai with:
+What actually happened
 
-- Links to your PRs on OpenClaw (if you don't have any, start there first)
-- Links to open source projects you maintain or actively contribute to
-- Your GitHub, Discord, and X/Twitter handles
-- A brief intro: background, experience, and areas of interest
-- Languages you speak and where you're based
-- How much time you can realistically commit
+## Environment
 
-We welcome people across all skill sets — engineering, documentation, community management, and more.
-We review every human-only-written application carefully and add maintainers slowly and deliberately.
-Please allow a few weeks for a response.
+- JSEBot: 2026.3.2
+- Node: 22.0.0
+- OS: macOS 14.3
+- Channel: Discord
 
-## Report a Vulnerability
+## Error Message
+```
 
-We take security reports seriously. Report vulnerabilities directly to the repository where the issue lives:
+Copy-paste any error output here
 
-- **Core CLI and gateway** — [openclaw/openclaw](https://github.com/openclaw/openclaw)
-- **macOS desktop app** — [openclaw/openclaw](https://github.com/openclaw/openclaw) (apps/macos)
-- **iOS app** — [openclaw/openclaw](https://github.com/openclaw/openclaw) (apps/ios)
-- **Android app** — [openclaw/openclaw](https://github.com/openclaw/openclaw) (apps/android)
-- **ClawHub** — [openclaw/clawhub](https://github.com/openclaw/clawhub)
-- **Trust and threat model** — [openclaw/trust](https://github.com/openclaw/trust)
+```
 
-For issues that don't fit a specific repo, or if you're unsure, email **security@openclaw.ai** and we'll route it.
+```
 
-### Required in Reports
+## ✨ Feature Requests
 
-1. **Title**
-2. **Severity Assessment**
-3. **Impact**
-4. **Affected Component**
-5. **Technical Reproduction**
-6. **Demonstrated Impact**
-7. **Environment**
-8. **Remediation Advice**
+### Before Proposing
 
-Reports without reproduction steps, demonstrated impact, and remediation advice will be deprioritized. Given the volume of AI-generated scanner findings, we must ensure we're receiving vetted reports from researchers who understand the issues.
+1. **Check the roadmap** — Feature might be planned ([ROADMAP.md](ROADMAP.md))
+2. **Read the vision** — Understand the project direction ([VISION.md](VISION.md))
+3. **Start a discussion** — Get feedback before writing code
+
+### Discussion Template
+
+```markdown
+## Feature: [Brief Title]
+
+### Problem
+
+What problem does this solve? Is it a limitation of JSEBot?
+
+### Proposed Solution
+
+How would you implement this?
+
+### Examples
+
+Real-world use cases or user stories.
+
+### Alternatives
+
+Other approaches you considered.
+```
+
+## 💻 Code Contributions
+
+### Workflow
+
+1. **Fork the repo** — Click "Fork" on GitHub
+2. **Create a branch** — `git checkout -b fix/your-fix` or `feat/your-feature`
+3. **Make changes** — Keep commits atomic and descriptive
+4. **Write tests** — Maintain or improve code coverage
+5. **Test locally** — `pnpm test` and `pnpm build`
+6. **Push and create PR** — GitHub will prompt you
+7. **Respond to feedback** — We'll review and iterate
+
+### Branch Naming
+
+- `fix/short-description` — Bug fixes
+- `feat/short-description` — New features
+- `docs/short-description` — Documentation updates
+- `refactor/short-description` — Code cleanup
+- `test/short-description` — Tests
+
+### Commit Messages
+
+Keep them clear and concise:
+
+```
+fix: handle DM pairing edge case in Discord channel
+
+Fixes #123. When a user sends a DM before approving the pairing code,
+the bot now returns a helpful error message instead of crashing.
+```
+
+Format: `<type>: <description>` where type is one of:
+
+- `feat` — New feature
+- `fix` — Bug fix
+- `docs` — Documentation
+- `test` — Tests
+- `refactor` — Code cleanup
+- `perf` — Performance improvement
+
+### Code Style
+
+We use **Prettier** for formatting and **ESLint** for linting:
+
+```bash
+# Check formatting
+pnpm lint
+
+# Auto-fix
+pnpm lint --fix
+
+# Format code
+pnpm format
+```
+
+**Style guidelines:**
+
+- **TypeScript** — Strongly typed, no `any` without a comment
+- **Async/await** — Preferred over callbacks and promise chains
+- **Error handling** — Always handle rejections; use try/catch
+- **Comments** — Explain _why_, not _what_
+- **Tests** — Unit tests for new functionality
+
+### Testing
+
+All changes should include tests:
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in watch mode
+pnpm test --watch
+
+# Run specific test
+pnpm test channels/discord
+```
+
+We use **Vitest** for unit tests and **E2E tests** for integration flows.
+
+**Test template:**
+
+```typescript
+import { describe, it, expect } from "vitest";
+import { myFunction } from "./my-function";
+
+describe("myFunction", () => {
+  it("should handle basic input", () => {
+    expect(myFunction("hello")).toBe("HELLO");
+  });
+
+  it("should throw on invalid input", () => {
+    expect(() => myFunction(null)).toThrow();
+  });
+});
+```
+
+## 📚 Documentation Contributions
+
+Documentation lives in:
+
+- **[README.md](README.md)** — Project overview and quick start
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — This file
+- **[docs/](docs/)** — In-depth guides and API reference
+- **[SECURITY.md](SECURITY.md)** — Security policy and best practices
+
+### Adding Documentation
+
+1. **For new features:** Add a section to the relevant guide
+2. **For guides:** Create a new `.md` file in `docs/`
+3. **For API docs:** Use JSDoc comments in source code
+4. **For examples:** Add a working code sample
+
+**Format:**
+
+- **Headings:** Use `#`, `##`, `###` (not underlines)
+- **Code blocks:** Use triple backticks with language tag
+- **Links:** Use relative paths (`docs/API.md`) for internal
+- **Lists:** Use `-` for bullets, `1.` for numbered
+- **Tables:** Use GFM table syntax
+
+## 🛠️ Skills & Plugins
+
+**Skills** are reusable tools shared via the [Marketplace](docs/SKILLS.md):
+
+```bash
+# Install a skill
+jsebot skill install slack
+
+# Create your own
+jsebot skill create my-skill
+
+# Publish (requires authentication)
+jsebot skill publish ./my-skill
+```
+
+See [Skills Guide](docs/SKILLS.md) for creating and publishing.
+
+## 🔒 Security
+
+Found a security vulnerability? **Please don't open a public issue.**
+
+Email [security@jsebot.dev](mailto:security@jsebot.dev) with:
+
+1. **Vulnerability description** — What is the issue?
+2. **Affected versions** — Which versions are impacted?
+3. **Proof of concept** — How to reproduce it
+4. **Suggested fix** — Proposed solution (if you have one)
+
+We'll acknowledge within 48 hours and work on a fix.
+
+## 📋 PR Checklist
+
+Before submitting a pull request:
+
+- [ ] I've read [CONTRIBUTING.md](CONTRIBUTING.md)
+- [ ] My branch is up to date with `main`
+- [ ] I've added tests for my changes
+- [ ] All tests pass: `pnpm test`
+- [ ] Code is formatted: `pnpm lint --fix`
+- [ ] Commit messages are clear and descriptive
+- [ ] Documentation is updated (if applicable)
+- [ ] No new warnings or errors in the build
+
+## 🎯 What Happens Next?
+
+1. **Automated checks** — CI runs tests and linting
+2. **Review** — Maintainers review your code
+3. **Feedback** — We might ask for changes
+4. **Merge** — Once approved, your code goes to `main`!
+
+We aim to respond to PRs within 48 hours.
+
+## 🙋 Questions?
+
+- **Issues & bugs:** [GitHub Issues](https://github.com/Ericnussa/JSEclaw/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Ericnussa/JSEclaw/discussions)
+- **Discord:** [Join our server](https://discord.gg/jsebot)
+- **Email:** [hello@jsebot.dev](mailto:hello@jsebot.dev)
+
+---
+
+## 💡 Good First Issues
+
+Looking to get started? Check out issues labeled:
+
+- [`good first issue`](https://github.com/Ericnussa/JSEclaw/labels/good%20first%20issue) — Great for new contributors
+- [`help wanted`](https://github.com/Ericnussa/JSEclaw/labels/help%20wanted) — We need your expertise
+- [`documentation`](https://github.com/Ericnussa/JSEclaw/labels/documentation) — Help improve docs
+
+---
+
+**Thanks for contributing! Your help makes JSEBot better for everyone.** ❤️
