@@ -10,6 +10,58 @@ title: "FAQ"
 
 Quick answers plus deeper troubleshooting for real-world setups (local dev, VPS, multi-agent, OAuth/API keys, model failover). For runtime diagnostics, see [Troubleshooting](/gateway/troubleshooting). For the full config reference, see [Configuration](/gateway/configuration).
 
+---
+
+## For Non-Technical Users
+
+**New to JSEBot? Start here with simple, jargon-free answers:**
+
+### Q: What is JSEBot?
+
+A: **JSEBot is a personal AI assistant that runs on your computer.** It's like ChatGPT, but you control it completely — your data stays private, and it can connect to WhatsApp, Telegram, Slack, Discord, and more. No coding knowledge required.
+
+### Q: Do I need to be technical to use JSEBot?
+
+A: **No.** Installation is simple copy-paste. Using it is like texting a friend. Advanced customization (if you want it) is optional.
+
+### Q: Is my data safe?
+
+A: **Yes.** Your messages stay on your computer unless you explicitly send them to an AI service (like Claude or GPT). Even then, you choose what you share. No company can sell your data or track you.
+
+### Q: How much does it cost?
+
+A: **JSEBot itself is free (open-source).** You pay only for the AI models you use. Claude and GPT have pay-as-you-go pricing (usually $0.50-$5/month for casual use) or free tiers. Local models cost nothing.
+
+### Q: Can I use it on my phone?
+
+A: **Partially.** JSEBot runs on your computer, but you message it from WhatsApp, Telegram, Slack, etc. on your phone. Full native phone apps are coming soon.
+
+### Q: What if I'm not technical and something breaks?
+
+A: **Don't worry.** Most issues have simple fixes (restart the app, reconnect a channel). See [TROUBLESHOOTING.md](/docs/TROUBLESHOOTING.md) or [BEGINNER-GUIDE.md](/docs/BEGINNER-GUIDE.md) for step-by-step help. Or ask the community on GitHub Discussions.
+
+### Q: How long does setup take?
+
+A: **About 5 minutes.** Install → answer a few questions → start chatting. See [QUICK-START.md](/QUICK-START.md).
+
+### Q: Can I use it without the internet?
+
+A: **Partially.** You need internet for setup and to connect to cloud AI models. But if you install a local model (optional), JSEBot works 100% offline.
+
+### Q: Who owns my data?
+
+A: **You do.** Your workspace, configuration, and local messages are yours. Only data you explicitly send to AI services (Claude, GPT) goes to those companies. JSEBot developers have zero access.
+
+### Q: What's the difference between JSEBot and ChatGPT?
+
+A: **ChatGPT is a website you visit. JSEBot is software you own.** ChatGPT is great for one-off questions. JSEBot is for power users who want to integrate AI into their workflow — chat on WhatsApp, automate tasks, control smart home, etc.
+
+### Q: Do I need coding knowledge?
+
+A: **No.** Basic usage requires zero coding. Advanced stuff (custom skills, integrations) is optional and for those who want it.
+
+---
+
 ## Table of contents
 
 - [Quick start and first-run setup]

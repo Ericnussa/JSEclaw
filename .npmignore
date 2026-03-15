@@ -1,0 +1,131 @@
+# Dependencies & Build
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+*.tsbuildinfo
+.venv/
+.venv-*/
+venv/
+
+# Development & Testing
+**/*.test.ts
+**/*.spec.ts
+**/*.test.js
+**/*.spec.js
+vitest.*.config.ts
+jest.config.js
+test/
+tests/
+.vitest/
+coverage/
+.nyc_output/
+
+# Source Code (uses dist/ for distribution)
+src/
+extensions/
+scripts/
+apps/
+library/
+research/
+projects/
+
+# Git & CI/CD
+.git/
+.gitignore
+.gitattributes
+.github/
+.gitlab-ci.yml
+.circleci/
+.travis.yml
+appveyor.yml
+
+# IDE & Editor
+.vscode/
+.idea/
+.sublime-project
+.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+.env
+.env.local
+.env.*.local
+*.iml
+.eslintcache
+.eslintignore.js
+
+# Linting & Formatting
+.eslintrc*
+.prettierrc*
+.oxfmt.toml
+oxlint.json
+.swiftlint.yml
+.swiftformat
+
+# Documentation
+docs/
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE
+
+# Build artifacts
+dist/
+build/
+tsconfig*.json
+esbuild.config.*
+webpack.config.*
+rollup.config.*
+
+# Docker & Containers
+Dockerfile*
+docker-compose.yml
+.dockerignore
+
+# Secrets & Configuration
+.secrets/
+.env.example
+.detect-secrets.cfg
+
+# Temporary & Cache
+.tmp/
+tmp/
+*.log
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+dist/
+*.local
+
+# Package managers
+.yarn/
+.pnpm-debug.log*
+.pnpm-lock.yaml*
+pnpm-workspace.yaml
+
+# OS Files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Misc
+.PHONY
+Makefile
+.vscode-test/
+.vscode/launch.json
+previews/
+exports/
+memory/
+cores3-server/
+neon-rubi-agent/
+library/
+
+# Keep these essential files
+!dist/
+!CHANGELOG.md
+!LICENSE
+!README.md
+!package.json

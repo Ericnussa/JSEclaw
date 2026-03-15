@@ -1,22 +1,67 @@
 {
   "name": "jsebot",
-  "version": "2026.3.2",
-  "description": "JSEBot: personal AI assistant (OpenClaw fork)",
-  "keywords": [],
+  "version": "0.5.0",
+  "description": "JSEBot: personal AI assistant & SDK (OpenClaw fork). Rubi-powered agent framework for CLI, IoT, and cloud.",
+  "keywords": [
+    "agent",
+    "ai",
+    "ai-assistant",
+    "animation",
+    "automation",
+    "avatar",
+    "branding",
+    "chatbot",
+    "cli",
+    "coresia",
+    "dashboard",
+    "embedded",
+    "extensible",
+    "iot",
+    "javascript",
+    "jsebot",
+    "m5stack",
+    "multi-platform",
+    "open-source",
+    "openclaw",
+    "pi5",
+    "plugin-system",
+    "raspberry-pi",
+    "rubi",
+    "sdk",
+    "sprite",
+    "terminal-ui",
+    "typescript"
+  ],
   "homepage": "https://github.com/Ericnussa/JSEclaw#readme",
   "bugs": {
     "url": "https://github.com/Ericnussa/JSEclaw/issues"
   },
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Eric Ezequiel Nussa Caraballo",
+    "email": "rubi.jse@gmail.com",
+    "url": "https://github.com/Ericnussa"
+  },
+  "maintainers": [
+    {
+      "name": "Eric Ezequiel Nussa Caraballo",
+      "email": "rubi.jse@gmail.com",
+      "url": "https://github.com/Ericnussa"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ericnussa/JSEclaw.git"
+    "url": "git+https://github.com/Ericnussa/JSEclaw.git",
+    "directory": "."
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Ericnussa"
   },
   "bin": {
-    "openclaw": "openclaw.mjs",
+    "jsebot": "jsebot.mjs",
     "jseclaw": "jseclaw.mjs",
-    "jsebot": "jsebot.mjs"
+    "openclaw": "openclaw.mjs"
   },
   "directories": {
     "doc": "docs",
@@ -104,6 +149,10 @@
     "ios:gen": "bash -lc './scripts/ios-configure-signing.sh && cd apps/ios && xcodegen generate'",
     "ios:open": "bash -lc './scripts/ios-configure-signing.sh && cd apps/ios && xcodegen generate && open OpenClaw.xcodeproj'",
     "ios:run": "bash -lc './scripts/ios-configure-signing.sh && cd apps/ios && xcodegen generate && xcodebuild -project OpenClaw.xcodeproj -scheme OpenClaw -destination \"${IOS_DEST:-platform=iOS Simulator,name=iPhone 17}\" -configuration Debug build && xcrun simctl boot \"${IOS_SIM:-iPhone 17}\" || true && xcrun simctl launch booted ai.openclaw.ios'",
+    "jsebot": "node scripts/run-node.mjs",
+    "jsebot:rpc": "node scripts/run-node.mjs agent --mode rpc --json",
+    "jseclaw": "node scripts/run-node.mjs",
+    "jseclaw:rpc": "node scripts/run-node.mjs agent --mode rpc --json",
     "lint": "oxlint --type-aware",
     "lint:all": "pnpm lint && pnpm lint:swift",
     "lint:auth:no-pairing-store-group": "node scripts/check-no-pairing-store-group-auth.mjs",
@@ -164,11 +213,7 @@
     "tui:dev": "OPENCLAW_PROFILE=dev CLAWDBOT_PROFILE=dev node scripts/run-node.mjs --dev tui",
     "ui:build": "node scripts/ui.js build",
     "ui:dev": "node scripts/ui.js dev",
-    "ui:install": "node scripts/ui.js install",
-    "jseclaw": "node scripts/run-node.mjs",
-    "jseclaw:rpc": "node scripts/run-node.mjs agent --mode rpc --json",
-    "jsebot": "node scripts/run-node.mjs",
-    "jsebot:rpc": "node scripts/run-node.mjs agent --mode rpc --json"
+    "ui:install": "node scripts/ui.js install"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "0.14.1",
@@ -259,7 +304,7 @@
     "@discordjs/opus": "^0.10.0"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "pnpm": {
