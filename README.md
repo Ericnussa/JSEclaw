@@ -481,8 +481,7 @@ More FAQ: See [FAQ](docs/FAQ.md).
 
 JSEBot stands on the shoulders of giants:
 
-- **[Claude](https://claude.ai)** — AI model powering thoughtful responses
-- **[Anthropic](https://anthropic.com)** — Pushing AI safety forward
+- **[Anthropic (Claude)](https://anthropic.com)** — Building safe, helpful AI models powering thoughtful responses
 - **Community** — Contributors, testers, and feedback providers
 
 ---
