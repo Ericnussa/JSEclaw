@@ -1,6 +1,6 @@
 {
   "name": "jsebot",
-  "version": "2026.3.17",
+  "version": "2026.3.18",
   "description": "JSEBot: personal AI assistant & SDK (OpenClaw fork). Rubi-powered agent framework for CLI, IoT, and cloud.",
   "keywords": [
     "agent",
@@ -72,15 +72,16 @@
     "LICENSE",
     "openclaw.mjs",
     "jseclaw.mjs",
+    "jsebot.mjs",
+    "jsebot-cli.mjs",
+    "bin/",
     "README-header.png",
     "README.md",
     "assets/",
     "dist/",
     "docs/",
     "extensions/",
-    "skills/",
-    "jsebot.mjs",
-    "assets/branding/"
+    "skills/"
   ],
   "type": "module",
   "main": "dist/index.js",
